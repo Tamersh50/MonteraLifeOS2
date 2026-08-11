@@ -9,37 +9,37 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#F6F8FB; --surface:#FFFFFF; --surface-2:#F1F4F8;
-  --border:#E7EAF0; --border-2:#D9DEE7;
-  --ink:#161A21; --muted:#5B6472; --faint:#98A1AF;
-  --brand:#1B2540; --brand-2:#26314F; --brand-line:#33406090;
-  --accent:#4C6EF5; --accent-weak:#EEF1FE; --accent-ink:#3B5BDB;
+  --bg:#F5F8FC; --surface:#FFFFFF; --surface-2:#EFF4FA;
+  --border:#E3EAF3; --border-2:#D2DCEA;
+  --ink:#101B2E; --muted:#54637A; --faint:#93A1B5;
+  --brand:#0F2450; --brand-2:#16305F; --brand-line:#23407790;
+  --accent:#1E6FE0; --accent-weak:#E7F0FD; --accent-ink:#1254BE;
   --red:#E03A3A; --red-weak:#FCEBEB;
   --amber:#E08A17; --amber-weak:#FBF1E1;
-  --green:#2F9E44; --green-weak:#E8F6EC;
-  --violet:#7048E8; --violet-weak:#F0EBFD;
-  --sky:#1098AD; --sky-weak:#E3F5F7;
+  --green:#1F9D53; --green-weak:#E6F5EC;
+  --violet:#6E4FE0; --violet-w:#EFEAFC; --violet-weak:#EFEAFC;
+  --sky:#0E93B8; --sky-weak:#E2F4F9;
   --r:12px; --r-sm:8px; --r-lg:16px;
-  --sh:0 1px 2px rgba(16,24,40,.04),0 1px 3px rgba(16,24,40,.06);
-  --sh-md:0 4px 16px rgba(16,24,40,.08);
-  --sh-lg:0 16px 48px rgba(16,24,40,.18);
-  --grad:linear-gradient(120deg,#1B2540 0%,#25335A 55%,#33477A 100%);
+  --sh:0 1px 2px rgba(13,32,64,.05),0 1px 3px rgba(13,32,64,.07);
+  --sh-md:0 4px 16px rgba(13,32,64,.09);
+  --sh-lg:0 16px 48px rgba(13,32,64,.20);
+  --grad:linear-gradient(120deg,#0F2450 0%,#14418F 55%,#1E6FE0 115%);
 }
 html[data-theme="dark"]{
-  --bg:#0D111C; --surface:#151B2A; --surface-2:#1C2436;
-  --border:#26304790; --border-2:#33405C;
-  --ink:#E9EDF6; --muted:#98A6C0; --faint:#647089;
-  --brand:#0A0F1C; --brand-2:#161E30; --brand-line:#2A3550;
-  --accent:#5C7CFA; --accent-weak:#1B2544; --accent-ink:#8AA0FC;
+  --bg:#0A101E; --surface:#111A2E; --surface-2:#18233B;
+  --border:#22304D90; --border-2:#2E3F63;
+  --ink:#E8EEF8; --muted:#96A6C2; --faint:#5F6E8B;
+  --brand:#070D1B; --brand-2:#101B33; --brand-line:#233457;
+  --accent:#4D8DF5; --accent-weak:#152848; --accent-ink:#82ACFA;
   --red:#F0716F; --red-weak:#361D22;
   --amber:#F0AA4C; --amber-weak:#33291A;
-  --green:#4CC46A; --green-weak:#132A1D;
-  --violet:#9E85FA; --violet-weak:#221C3A;
-  --sky:#3FC0D4; --sky-weak:#132B31;
+  --green:#42C273; --green-weak:#12291C;
+  --violet:#9E85FA; --violet-w:#221C3A; --violet-weak:#221C3A;
+  --sky:#3FC0DC; --sky-weak:#122B33;
   --sh:0 1px 2px rgba(0,0,0,.3),0 2px 6px rgba(0,0,0,.3);
   --sh-md:0 6px 22px rgba(0,0,0,.4);
   --sh-lg:0 20px 60px rgba(0,0,0,.55);
-  --grad:linear-gradient(120deg,#1A2544 0%,#20305C 55%,#2C3E72 100%);
+  --grad:linear-gradient(120deg,#0E2148 0%,#153B7E 55%,#1E63C8 115%);
 }
 body,.card,.stat,.tbl,.sidebar,.topbar,.col,.tcard,.modal,.select-min,.search input,.field input,.field textarea,.field select{
   transition:background-color .35s ease,color .35s ease,border-color .35s ease,box-shadow .35s ease;
@@ -400,6 +400,101 @@ a{color:inherit;text-decoration:none}
   .progress i{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 
+/* ---------- Montera logo ---------- */
+.mlogo{display:grid;place-items:center;flex-shrink:0}
+.mlogo svg{display:block}
+
+/* ---------- time-of-day briefing themes ---------- */
+.briefing.t-dawn{background:linear-gradient(120deg,#231A4E 0%,#3D2E7E 55%,#7A5AC8 115%)}
+.briefing.t-morning{background:linear-gradient(120deg,#0F2450 0%,#14418F 55%,#1E6FE0 115%)}
+.briefing.t-noon{background:linear-gradient(120deg,#0C3A66 0%,#1265A8 55%,#1E9BD8 115%)}
+.briefing.t-evening{background:linear-gradient(120deg,#20264E 0%,#4A3A78 60%,#C77B3A 130%)}
+.briefing.t-night{background:linear-gradient(120deg,#0A1230 0%,#152449 55%,#28407A 115%)}
+.brief-top{display:flex;align-items:flex-start;gap:16px;position:relative;flex-wrap:wrap}
+.brief-clock{margin-inline-start:auto;text-align:left;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);
+  border-radius:12px;padding:10px 16px;backdrop-filter:blur(4px)}
+.brief-clock .tm{font-size:26px;font-weight:700;letter-spacing:.5px;line-height:1;font-feature-settings:"tnum"}
+.brief-clock .dts{font-size:11px;color:#C9D8F2;margin-top:6px;line-height:1.7}
+
+/* ---------- sub tabs (seg exists) ---------- */
+.subseg{display:flex;background:var(--surface-2);border-radius:var(--r-sm);padding:3px;width:max-content;margin-bottom:14px}
+.subseg button{padding:7px 16px;border-radius:6px;font-weight:600;font-size:13px;color:var(--muted)}
+.subseg button.on{background:var(--surface);color:var(--accent-ink);box-shadow:var(--sh)}
+
+/* ---------- recurring ---------- */
+.rec-next{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:6px}
+.rec-kind{font-size:11px;color:var(--faint)}
+
+/* ---------- habits (daily checklist) ---------- */
+.habit-row{display:flex;align-items:center;gap:12px;padding:11px 12px;border:1px solid var(--border);border-radius:var(--r-sm);
+  margin-bottom:8px;background:var(--surface);transition:.15s}
+.habit-row.done{background:var(--green-weak);border-color:transparent}
+.hcheck{width:26px;height:26px;border-radius:8px;border:2px solid var(--border-2);display:grid;place-items:center;
+  cursor:pointer;transition:.15s;font-size:14px;flex-shrink:0;background:var(--surface)}
+.hcheck:hover{border-color:var(--accent)}
+.hcheck.on{background:var(--green);border-color:var(--green);color:#fff}
+.habit-row .hn{flex:1;font-weight:500}
+.habit-row.done .hn{color:var(--green)}
+.habit-ic{font-size:17px;width:26px;text-align:center}
+.day-note{width:100%;min-height:86px;border:1px solid var(--border-2);border-radius:var(--r-sm);padding:12px;
+  background:var(--surface);outline:none;resize:vertical;font-family:inherit}
+.day-note:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-weak)}
+.ring-day{width:88px;height:88px;position:relative;flex-shrink:0}
+.ring-day svg{transform:rotate(-90deg)}
+.ring-day .pc{position:absolute;inset:0;display:grid;place-items:center;font-weight:700;font-size:17px}
+
+/* ---------- habit matrix ---------- */
+.matrix-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh)}
+.mx{border-collapse:collapse;min-width:100%}
+.mx th{position:sticky;top:0;background:var(--surface-2);font-size:10.5px;color:var(--muted);padding:8px 6px;border-bottom:1px solid var(--border);white-space:nowrap}
+.mx th.hcol{writing-mode:initial;min-width:110px;text-align:right;padding-inline-start:12px}
+.mx td{border-bottom:1px solid var(--border);padding:4px 6px;text-align:center}
+.mx td.dcol{font-size:11px;color:var(--muted);white-space:nowrap;text-align:right;padding-inline-start:12px;font-weight:600}
+.mx td.dcol.today{color:var(--accent-ink);font-weight:700}
+.mcell{width:22px;height:22px;border-radius:6px;display:inline-grid;place-items:center;cursor:pointer;font-size:11px;
+  background:var(--surface-2);color:transparent;transition:.12s;border:1px solid transparent}
+.mcell:hover{border-color:var(--accent)}
+.mcell.done{background:var(--green);color:#fff}
+.mcell.miss{background:var(--red-weak)}
+.mcell.future{opacity:.35;cursor:default}
+.hstat{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--border)}
+.hstat:last-child{border:none}
+.hstat .pbar2{flex:1;height:7px;background:var(--surface-2);border-radius:20px;overflow:hidden}
+.hstat .pbar2 i{display:block;height:100%;background:var(--green);border-radius:20px}
+
+/* ---------- notes pages editor ---------- */
+.pages-modal{max-width:860px !important}
+.paper-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--border);margin-bottom:12px}
+.ptool{width:34px;height:34px;border-radius:8px;border:1px solid var(--border-2);display:grid;place-items:center;
+  font-size:15px;background:var(--surface);transition:.12s}
+.ptool:hover{border-color:var(--accent)}
+.ptool.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pcolor{width:26px;height:26px;border-radius:50%;border:2.5px solid transparent;cursor:pointer}
+.pcolor.on{border-color:var(--ink);box-shadow:0 0 0 2px var(--surface)}
+.paper-wrap{position:relative;background:#fff;border:1px solid var(--border-2);border-radius:8px;overflow:hidden;
+  box-shadow:var(--sh-md);height:520px}
+.paper-lines{position:absolute;inset:0;background:repeating-linear-gradient(#fff 0 31px,#E8EEF6 31px 32px);pointer-events:none}
+.paper-text{position:absolute;inset:0;background:transparent;border:none;outline:none;resize:none;width:100%;height:100%;
+  padding:16px 18px;font-family:inherit;font-size:15px;line-height:32px;color:#15233C;z-index:2}
+.paper-canvas{position:absolute;inset:0;z-index:3;touch-action:none}
+.paper-canvas.off{pointer-events:none}
+.page-nav{display:flex;align-items:center;gap:10px;justify-content:center;margin-top:12px}
+.page-nav .pn{font-size:13px;font-weight:600;color:var(--muted)}
+
+/* ---------- events ---------- */
+.cal-ev.evnt{background:var(--sky-weak);color:var(--sky)}
+.cal-ev.recc{background:var(--amber-weak);color:var(--amber)}
+.cal-ev.vaca{background:var(--green-weak);color:var(--green)}
+
+/* ---------- project/area detail ---------- */
+.det-head{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px 20px;box-shadow:var(--sh);margin-bottom:16px}
+.det-head h2{font-size:20px;font-weight:700;letter-spacing:-.3px}
+.det-stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+.det-stat{background:var(--surface-2);border-radius:var(--r-sm);padding:10px 16px;min-width:100px}
+.det-stat .v{font-size:18px;font-weight:700}
+.det-stat .l{font-size:11px;color:var(--muted)}
+.back-link{display:inline-flex;align-items:center;gap:6px;color:var(--accent-ink);font-weight:600;font-size:13px;margin-bottom:12px;cursor:pointer}
+
 /* responsive */
 @media(max-width:900px){
   .app{grid-template-columns:1fr}
@@ -425,7 +520,7 @@ a{color:inherit;text-decoration:none}
 <!-- ============ CONFIG SCREEN ============ -->
 <div id="config-screen" class="gate hidden">
   <div class="gate-card">
-    <div class="brand-mark"><div class="brand-dot">M</div>
+    <div class="brand-mark"><span class="mlogo"><svg width="38" height="38" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B9BF4"/><stop offset="1" stop-color="#0B3E9C"/></linearGradient><linearGradient id="mbg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0B3E9C"/><stop offset="1" stop-color="#2B9BF4"/></linearGradient></defs><path d="M6 10 L20 10 L32 26 L44 10 L58 10 L58 54 L46 54 L46 26 L34 42 L30 42 L18 26 L18 54 L6 54 Z" fill="url(#mgg)"/><rect x="26" y="40" width="4.5" height="12" rx="1" fill="url(#mbg)"/><rect x="33" y="34" width="4.5" height="18" rx="1" fill="url(#mbg)"/><rect x="40" y="28" width="4.5" height="24" rx="1" fill="url(#mbg)"/><path d="M22 44 Q34 34 46 22 L43 21 L50 17 L49 25 L47 23 Q35 36 24 46 Z" fill="#5FB6FF"/></svg></span>
       <div class="brand-name">Montera Life OS<small>ربط قاعدة البيانات</small></div></div>
     <div class="gate-title">اربط النظام بـ Supabase</div>
     <div class="gate-sub">أدخل رابط المشروع والمفتاح العام (anon). تُحفظ محلياً في متصفحك فقط.</div>
@@ -442,7 +537,7 @@ a{color:inherit;text-decoration:none}
 <!-- ============ AUTH SCREEN ============ -->
 <div id="auth-screen" class="gate hidden">
   <div class="gate-card">
-    <div class="brand-mark"><div class="brand-dot">M</div>
+    <div class="brand-mark"><span class="mlogo"><svg width="38" height="38" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B9BF4"/><stop offset="1" stop-color="#0B3E9C"/></linearGradient><linearGradient id="mbg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0B3E9C"/><stop offset="1" stop-color="#2B9BF4"/></linearGradient></defs><path d="M6 10 L20 10 L32 26 L44 10 L58 10 L58 54 L46 54 L46 26 L34 42 L30 42 L18 26 L18 54 L6 54 Z" fill="url(#mgg)"/><rect x="26" y="40" width="4.5" height="12" rx="1" fill="url(#mbg)"/><rect x="33" y="34" width="4.5" height="18" rx="1" fill="url(#mbg)"/><rect x="40" y="28" width="4.5" height="24" rx="1" fill="url(#mbg)"/><path d="M22 44 Q34 34 46 22 L43 21 L50 17 L49 25 L47 23 Q35 36 24 46 Z" fill="#5FB6FF"/></svg></span>
       <div class="brand-name">Montera Life OS<small>مركز القيادة الشخصي</small></div></div>
     <div class="tabs-min">
       <button id="tab-login" class="on" onclick="setAuthMode('login')">دخول</button>
@@ -465,7 +560,7 @@ a{color:inherit;text-decoration:none}
 <!-- ============ RECOVERY SCREEN (set new password) ============ -->
 <div id="recovery-screen" class="gate hidden">
   <div class="gate-card">
-    <div class="brand-mark"><div class="brand-dot">M</div>
+    <div class="brand-mark"><span class="mlogo"><svg width="38" height="38" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mgg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B9BF4"/><stop offset="1" stop-color="#0B3E9C"/></linearGradient><linearGradient id="mbg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0B3E9C"/><stop offset="1" stop-color="#2B9BF4"/></linearGradient></defs><path d="M6 10 L20 10 L32 26 L44 10 L58 10 L58 54 L46 54 L46 26 L34 42 L30 42 L18 26 L18 54 L6 54 Z" fill="url(#mgg)"/><rect x="26" y="40" width="4.5" height="12" rx="1" fill="url(#mbg)"/><rect x="33" y="34" width="4.5" height="18" rx="1" fill="url(#mbg)"/><rect x="40" y="28" width="4.5" height="24" rx="1" fill="url(#mbg)"/><path d="M22 44 Q34 34 46 22 L43 21 L50 17 L49 25 L47 23 Q35 36 24 46 Z" fill="#5FB6FF"/></svg></span>
       <div class="brand-name">Montera Life OS<small>تعيين كلمة مرور جديدة</small></div></div>
     <div class="gate-title">كلمة مرور جديدة</div>
     <div class="gate-sub">اكتب كلمة المرور الجديدة (٦ أحرف فأكثر) للدخول إلى حسابك.</div>
@@ -481,7 +576,7 @@ a{color:inherit;text-decoration:none}
 <!-- ============ APP ============ -->
 <div id="app" class="app hidden">
   <aside class="sidebar" id="sidebar">
-    <div class="sb-brand"><div class="brand-dot">M</div>
+    <div class="sb-brand"><span class="mlogo"><svg width="36" height="36" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mgs" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B9BF4"/><stop offset="1" stop-color="#0B3E9C"/></linearGradient><linearGradient id="mbs" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0B3E9C"/><stop offset="1" stop-color="#2B9BF4"/></linearGradient></defs><path d="M6 10 L20 10 L32 26 L44 10 L58 10 L58 54 L46 54 L46 26 L34 42 L30 42 L18 26 L18 54 L6 54 Z" fill="url(#mgs)"/><rect x="26" y="40" width="4.5" height="12" rx="1" fill="url(#mbs)"/><rect x="33" y="34" width="4.5" height="18" rx="1" fill="url(#mbs)"/><rect x="40" y="28" width="4.5" height="24" rx="1" fill="url(#mbs)"/><path d="M22 44 Q34 34 46 22 L43 21 L50 17 L49 25 L47 23 Q35 36 24 46 Z" fill="#5FB6FF"/></svg></span>
       <div class="brand-name">Montera Life OS<small>PERSONAL OS</small></div></div>
     <nav class="sb-nav" id="sb-nav"></nav>
     <div class="sb-foot">
@@ -530,10 +625,11 @@ a{color:inherit;text-decoration:none}
 =================================================================== */
 const CFG_KEY='montera_cfg', THEME_KEY='montera_theme', NOTIF_SEEN='montera_notif_seen';
 let supa=null, authMode='login';
-const S={ user:null, view:'dashboard', areaFilter:'all', taskView:'table',
+const S={ user:null, view:'dashboard', areaFilter:'all', taskView:'table', tasksMode:'list',
   calMonth:new Date().getMonth(), calYear:new Date().getFullYear(),
-  notifs:[], notifSeen:{},
-  data:{areas:[],projects:[],meetings:[],tasks:[],waiting_for:[],notes:[],decisions:[]} };
+  notifs:[], notifSeen:{}, profile:null, habitsMode:'today', selProject:null, selArea:null,
+  data:{areas:[],projects:[],meetings:[],tasks:[],waiting_for:[],notes:[],decisions:[],
+        recurring_tasks:[],events:[],habits:[],habit_logs:[],daily_reviews:[]} };
 
 /* apply saved theme immediately (before first paint) */
 (function initThemeEarly(){
@@ -551,6 +647,7 @@ const NAV=[
   {id:'calendar',ar:'التقويم',en:'Calendar',ic:'▦'},
   {id:'waiting_for',ar:'بانتظار رد',en:'Waiting',ic:'⏳'},
   {id:'notes',ar:'ملاحظات وأفكار',en:'Notes',ic:'✎'},
+  {id:'habits',ar:'يومياتي',en:'Daily',ic:'☀'},
   {section:'التحليل'},
   {id:'analytics',ar:'الإحصاءات',en:'Analytics',ic:'◔'},
   {id:'reports',ar:'التقارير',en:'Reports',ic:'▤'},
@@ -566,15 +663,24 @@ const WSTATUS={waiting:{ar:'بالانتظار',c:'c-amber'},received:{ar:'تم 
 const FORMS={
   tasks:{title:'مهمة',fields:[
     {n:'title',l:'العنوان',t:'text',req:1,full:1},
-    {n:'area_id',l:'المجال',t:'ref',ref:'areas'},
-    {n:'project_id',l:'المشروع',t:'ref',ref:'projects'},
+    {n:'area_id',l:'المجال',t:'ref',ref:'areas',linkTo:'project_id'},
+    {n:'project_id',l:'المشروع',t:'ref',ref:'projects',byArea:1},
     {n:'status',l:'الحالة',t:'select',opts:TSTATUS,def:'todo'},
     {n:'priority',l:'الأولوية',t:'select',opts:PRIO,def:'medium'},
-    {n:'start_date',l:'تاريخ البدء',t:'date'},
+    {n:'started_at',l:'وقت البداية (تلقائي عند بدء التنفيذ)',t:'datetime'},
+    {n:'completed_at',l:'وقت النهاية (تلقائي عند الإكمال)',t:'datetime'},
     {n:'due_date',l:'تاريخ الاستحقاق',t:'date'},
     {n:'estimated_hours',l:'الوقت المتوقع (ساعات)',t:'number'},
     {n:'actual_hours',l:'الوقت الفعلي (ساعات)',t:'number'},
     {n:'progress',l:'نسبة الإنجاز %',t:'number',max:100},
+    {n:'notes',l:'ملاحظات',t:'textarea',full:1},
+  ]},
+  events:{title:'حدث',fields:[
+    {n:'title',l:'عنوان الحدث',t:'text',req:1,full:1},
+    {n:'kind',l:'النوع',t:'select',opts:{vacation:{ar:'إجازة'},conference:{ar:'مؤتمر'},occasion:{ar:'مناسبة'},commitment:{ar:'التزام'},event:{ar:'حدث عام'}},def:'event'},
+    {n:'remind_days',l:'تذكير قبلها بـ (أيام)',t:'number',def:7},
+    {n:'start_date',l:'تاريخ البداية',t:'date',req:1},
+    {n:'end_date',l:'تاريخ النهاية (اختياري)',t:'date'},
     {n:'notes',l:'ملاحظات',t:'textarea',full:1},
   ]},
   projects:{title:'مشروع',fields:[
@@ -730,13 +836,17 @@ async function startApp(){
   go('dashboard');
   requestNotifPermission();
   startReminderChecker();
+  ensureProfile();
 }
 
 async function loadAll(){
-  const t=['areas','projects','meetings','tasks','waiting_for','notes','decisions'];
-  const res=await Promise.all(t.map(x=>supa.from(x).select('*').order('created_at',{ascending:false})));
+  const t=['areas','projects','meetings','tasks','waiting_for','notes','decisions',
+           'recurring_tasks','events','habits','habit_logs','daily_reviews'];
+  const res=await Promise.all(t.map(x=>supa.from(x).select('*').order('created_at',{ascending:false}).then(r=>r,()=>({data:[]}))));
   t.forEach((x,i)=>{ S.data[x]=res[i].data||[]; });
   S.data.areas.sort((a,b)=>(a.sort||0)-(b.sort||0));
+  S.data.habits.sort((a,b)=>(a.sort||0)-(b.sort||0));
+  try{ const {data:pr}=await supa.from('profiles').select('*').maybeSingle(); S.profile=pr||null; }catch(e){ S.profile=null; }
 }
 
 async function ensureDefaultAreas(){
@@ -792,7 +902,9 @@ function go(view){ S.view=view; highlightNav(); if(window.innerWidth<=900) close
 
 const TITLES={dashboard:['لوحة القيادة','DASHBOARD'],tasks:['المهام','TASKS'],projects:['المشاريع','PROJECTS'],
   meetings:['الاجتماعات','MEETINGS'],calendar:['التقويم','CALENDAR'],waiting_for:['بانتظار رد','WAITING FOR'],
-  notes:['ملاحظات وأفكار','NOTES'],analytics:['الإحصاءات','ANALYTICS'],reports:['التقارير','REPORTS'],areas:['المجالات','AREAS']};
+  notes:['ملاحظات وأفكار','NOTES'],habits:['يومياتي','MY DAY'],analytics:['الإحصاءات','ANALYTICS'],
+  reports:['التقارير','REPORTS'],areas:['المجالات','AREAS'],
+  project_detail:['تفاصيل المشروع','PROJECT'],area_detail:['تفاصيل المجال','AREA']};
 
 function route(){
   renderNav();
@@ -800,8 +912,9 @@ function route(){
   document.getElementById('page-title').innerHTML=`${ar}<small>${en}</small>`;
   const c=document.getElementById('content');
   ({dashboard:renderDashboard,tasks:renderTasks,projects:renderProjects,meetings:renderMeetings,
-    calendar:renderCalendar,waiting_for:renderWaiting,notes:renderNotes,analytics:renderAnalytics,
-    reports:renderReports,areas:renderAreas}[S.view]||renderDashboard)(c);
+    calendar:renderCalendar,waiting_for:renderWaiting,notes:renderNotes,habits:renderHabits,
+    analytics:renderAnalytics,reports:renderReports,areas:renderAreas,
+    project_detail:renderProjectDetail,area_detail:renderAreaDetail}[S.view]||renderDashboard)(c);
   refreshNotifications();
 }
 
@@ -824,13 +937,18 @@ function renderDashboard(c){
   const doneThisWeek=tasks.filter(t=>t.status==='done'&&t.updated_at&&isoDate(new Date(t.updated_at))>=weekAgo).length;
 
   const summary=buildSummary(todayTasks.length,overdue.length,upMeetings.length,waiting.length);
-  const hour=now.getHours();
-  const greet=hour<12?'صباح الخير':hour<17?'مساء الخير':'مساء الخير';
+  const g=greetingInfo(now);
 
   c.innerHTML=`
-  <div class="briefing">
-    <h1>${greet}، د. تامر 👋</h1>
-    <div class="date">${arDate(now)}</div>
+  <div class="briefing ${g.cls}">
+    <div class="brief-top">
+      <div>
+        <h1>${g.text}، ${userDisplayName()} ${g.emoji}</h1>
+        <div class="date">${arDate(now)} · <span style="color:#BFD3F5">${hijriDate(now)}</span></div>
+      </div>
+      <div class="brief-clock"><div class="tm" id="live-clock">${liveTime()}</div>
+        <div class="dts">${g.label}</div></div>
+    </div>
     <div class="summary">${summary}</div>
   </div>
 
@@ -930,7 +1048,13 @@ function cardProjects(ar,items){
    TASKS
 =================================================================== */
 function renderTasks(c){
-  c.innerHTML=`
+  c.innerHTML=`<div class="subseg">
+      <button class="${S.tasksMode==='list'?'on':''}" onclick="S.tasksMode='list';route()">المهام</button>
+      <button class="${S.tasksMode==='recurring'?'on':''}" onclick="S.tasksMode='recurring';route()">🔁 الدورية</button>
+    </div><div id="tasks-outer"></div>`;
+  const outer=document.getElementById('tasks-outer');
+  if(S.tasksMode==='recurring'){ renderRecurring(outer); return; }
+  outer.innerHTML=`
   ${toolbar('tasks',[
     seg('taskView',[['table','جدول'],['board','لوحة']]),
     areaSelect(),
@@ -968,7 +1092,7 @@ function renderTasksBody(){
   if(!list.length){ el.innerHTML=cardEmpty('لا مهام بعد. ابدأ بإضافة أول مهمة.','tasks'); return; }
   el.innerHTML=`<div class="tbl"><table><thead><tr>
     <th style="width:34px"></th><th>المهمة</th><th>المجال</th><th>الأولوية</th>
-    <th>الحالة</th><th>متوقع</th><th>الاستحقاق</th><th style="width:96px"></th></tr></thead><tbody>
+    <th>الحالة</th><th>البداية</th><th>النهاية</th><th>الاستحقاق</th><th style="width:96px"></th></tr></thead><tbody>
     ${list.map(t=>{const a=area(t.area_id),done=t.status==='done';
       const od=!done&&t.due_date&&t.due_date<isoDate(new Date());const urg=isUrgent(t);
       return `<tr>
@@ -978,7 +1102,8 @@ function renderTasksBody(){
         <td>${a?`<span class="chip c-gray"><span class="dt" style="background:${a.color}"></span>${esc(a.name_ar)}</span>`:'—'}</td>
         <td>${t.priority?chip(PRIO[t.priority]):'—'}</td>
         <td>${chip(TSTATUS[t.status])}</td>
-        <td style="color:var(--muted)">${t.estimated_hours?fmtHrs(t.estimated_hours):'—'}</td>
+        <td style="color:var(--muted);font-size:12px">${t.started_at?arShort(t.started_at):'—'}</td>
+        <td style="color:var(--muted);font-size:12px">${t.completed_at?arShort(t.completed_at):'—'}</td>
         <td style="${od?'color:var(--red);font-weight:600':'color:var(--muted)'}">${t.due_date?arShort(t.due_date):'—'}</td>
         <td><div class="row-actions">
           <button class="icon-btn" onclick="quickExtend('${t.id}',event)" title="تمديد يوم">⏭</button>
@@ -997,7 +1122,7 @@ function renderProjects(c){
   ${toolbar('projects',[areaSelect(),
     `<button class="btn btn-primary btn-sm" style="margin-inline-start:auto" onclick="openForm('projects')">＋ مشروع</button>`])}
   ${list.length?`<div class="grid grid-3">${list.map(p=>{const a=area(p.area_id);return `
-    <div class="card" style="cursor:pointer" onclick="openForm('projects','${p.id}')">
+    <div class="card" style="cursor:pointer" onclick="openProject('${p.id}')">
       <div class="card-body pad">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
           ${a?`<span class="chip c-gray"><span class="dt" style="background:${a.color}"></span>${esc(a.name_ar)}</span>`:''}
@@ -1084,7 +1209,11 @@ function renderNotes(c){
         </div>
         ${n.title?`<b style="font-size:14px;font-weight:600;display:block;margin-bottom:6px">${esc(n.title)}</b>`:''}
         <div style="font-size:12.5px;color:var(--muted);line-height:1.7;display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden">${esc(n.body||'')}</div>
-        ${n.category?`<div style="margin-top:10px"><span class="chip c-blue">${esc(n.category)}</span></div>`:''}
+        <div style="margin-top:10px;display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+          ${n.category?`<span class="chip c-blue">${esc(n.category)}</span>`:''}
+          ${(n.pages&&n.pages.length)?`<span class="chip c-gray">📄 ${n.pages.length} صفحة</span>`:''}
+          <button class="chip c-violet" style="border:none;cursor:pointer" onclick="event.stopPropagation();openPagesEditor('${n.id}')">📝 الصفحات</button>
+        </div>
       </div></div>`;}).join('')}</div>`:cardEmpty('لا ملاحظات بعد. التقط فكرتك الأولى.','notes')}`;
 }
 
@@ -1099,12 +1228,12 @@ function renderAreas(c){
   <div class="grid grid-3">${list.map(a=>{
     const tc=S.data.tasks.filter(t=>t.area_id===a.id&&t.status!=='done').length;
     const pc=S.data.projects.filter(p=>p.area_id===a.id).length;
-    return `<div class="card"><div class="card-body pad">
+    return `<div class="card" style="cursor:pointer" onclick="openArea('${a.id}')"><div class="card-body pad">
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
         <div style="width:42px;height:42px;border-radius:11px;background:${a.color}1a;display:grid;place-items:center;font-size:20px">${a.icon||'📁'}</div>
         <div style="flex:1;min-width:0"><b style="font-size:15px;font-weight:600;display:block">${esc(a.name_ar)}</b>
           <span style="font-size:11px;color:var(--faint)">${esc(a.name_en||'')}</span></div>
-        <button class="icon-btn" onclick="openForm('areas','${a.id}')">✎</button>
+        <button class="icon-btn" onclick="event.stopPropagation();openForm('areas','${a.id}')">✎</button>
       </div>
       <div style="display:flex;gap:16px;font-size:12px;color:var(--muted)">
         <span><b style="color:var(--ink)">${tc}</b> مهمة</span>
@@ -1119,12 +1248,17 @@ function openForm(entity,id,preset){
   toggleQA(null,true);
   const schema=FORMS[entity];
   const rec=id?S.data[entity].find(x=>x.id===id):null;
+  window._formAreaId=(rec&&rec.area_id)||(preset&&preset.area_id)||'';
   const fields=schema.fields.map(f=>{
     let val=rec?rec[f.n]:(preset&&preset[f.n]!==undefined?preset[f.n]:(f.def!==undefined?f.def:''));
-    return `<div class="field ${f.full?'full':''}"><label>${f.l}${f.req?' *':''}</label>${fieldInput(f,val)}</div>`;
+    return `<div class="field ${f.full?'full':''}" ${f.byArea?'id="fld-project"':''}><label>${f.l}${f.req?' *':''}</label>${fieldInput(f,val)}</div>`;
   }).join('');
-  // شريط سريع للمهام: تمديد + تحديد كعاجل
+  // شريط سريع للمهام: تمديد + تحديد كعاجل + نسخ
   let quickBar='';
+  if(entity==='notes'&&id){
+    quickBar=`<div class="field full" style="margin-top:2px">
+      <button class="btn btn-ghost" style="width:100%" onclick="openPagesEditor('${id}')">📝 فتح صفحات الكتابة والرسم</button></div>`;
+  }
   if(entity==='tasks'&&id){
     quickBar=`<div class="field full" style="margin-top:2px">
       <label>إجراءات سريعة</label>
@@ -1132,6 +1266,7 @@ function openForm(entity,id,preset){
         <button onclick="extendTaskBy('${id}',1)">+ يوم</button>
         <button onclick="extendTaskBy('${id}',3)">+ ٣ أيام</button>
         <button onclick="extendTaskBy('${id}',7)">+ أسبوع</button>
+        <button onclick="duplicateTask('${id}')" style="color:var(--accent);border-color:var(--accent)">⧉ نسخ كمهمة جديدة</button>
         ${rec&&rec.priority!=='urgent'?`<button onclick="markUrgent('${id}')" style="color:var(--red);border-color:var(--red)">⚠️ تحديد كعاجل</button>`:''}
       </div></div>`;
   }
@@ -1212,9 +1347,14 @@ function fieldInput(f,val){
   if(f.t==='ref'){
     let opts;
     if(f.ref==='areas') opts=S.data.areas.map(a=>[a.id,a.name_ar]);
-    else if(f.ref==='projects') opts=S.data.projects.filter(p=>!p.archived).map(p=>[p.id,p.name]);
+    else if(f.ref==='projects'){
+      let ps=S.data.projects.filter(p=>!p.archived);
+      if(f.byArea && window._formAreaId) ps=ps.filter(p=>p.area_id===window._formAreaId);
+      opts=ps.map(p=>[p.id,p.name]);
+    }
     else opts=[];
-    return `<select ${nm}><option value="">— بدون —</option>${opts.map(([id,nm2])=>`<option value="${id}" ${val===id?'selected':''}>${esc(nm2)}</option>`).join('')}</select>`;
+    const linker=f.linkTo?`onchange="window._formAreaId=this.value;refilterProjects()"`:'';
+    return `<select ${nm} ${linker}><option value="">— بدون —</option>${opts.map(([id,nm2])=>`<option value="${id}" ${val===id?'selected':''}>${esc(nm2)}</option>`).join('')}</select>`;
   }
   return `<input type="text" ${nm} value="${val?esc(val):''}">`;
 }
@@ -1232,6 +1372,14 @@ async function saveForm(entity,id){
   });
   const req=schema.fields.find(f=>f.req);
   if(req&&!obj[req.n]){ toast('أدخل '+req.l,'err'); return; }
+  // أوقات المهمة التلقائية (قابلة للتعديل يدوياً)
+  if(entity==='tasks'){
+    if(obj.status==='in_progress'&&!obj.started_at) obj.started_at=new Date().toISOString();
+    if(obj.status==='done'){
+      if(!obj.completed_at) obj.completed_at=new Date().toISOString();
+      if(!obj.started_at) obj.started_at=new Date().toISOString();
+    }
+  }
   const btn=document.getElementById('save-btn'); btn.disabled=true; btn.textContent='...';
   try{
     if(id) await supa.from(entity).update(obj).eq('id',id);
@@ -1253,9 +1401,25 @@ async function toggleTask(id,ev){ ev&&ev.stopPropagation();
   const t=S.data.tasks.find(x=>x.id===id); if(!t) return;
   const ns=t.status==='done'?'todo':'done';
   t.status=ns; route();
-  try{ await supa.from('tasks').update({status:ns,progress:ns==='done'?100:t.progress}).eq('id',id); }
+  const patch={status:ns,progress:ns==='done'?100:t.progress};
+  if(ns==='done'&&!t.completed_at) patch.completed_at=new Date().toISOString();
+  if(ns==='done'&&!t.started_at) patch.started_at=t.created_at||new Date().toISOString();
+  if(ns==='todo') patch.completed_at=null;
+  try{ await supa.from('tasks').update(patch).eq('id',id); }
   catch(e){ toast('خطأ','err'); }
   await loadAll(); route();
+}
+async function duplicateTask(id){
+  const t=S.data.tasks.find(x=>x.id===id); if(!t) return;
+  closeModal();
+  openForm('tasks',null,{title:t.title+' (نسخة)',area_id:t.area_id,project_id:t.project_id,
+    priority:t.priority,estimated_hours:t.estimated_hours,notes:t.notes,due_date:'',status:'todo'});
+}
+function refilterProjects(){
+  const holder=document.getElementById('fld-project'); if(!holder) return;
+  const f=FORMS.tasks.fields.find(x=>x.n==='project_id');
+  const cur=holder.querySelector('select'); const curVal=cur?cur.value:'';
+  holder.innerHTML=`<label>المشروع</label>${fieldInput(f,curVal)}`;
 }
 async function markReceived(id,ev){ ev&&ev.stopPropagation();
   const w=S.data.waiting_for.find(x=>x.id===id); if(!w) return;
@@ -1358,6 +1522,18 @@ function buildNotifs(){
     out.push({id:'meet-'+m.id,cls:'ni-blue',ic:'◷',title:m.title,sub:'اجتماع · '+arShort(m.meeting_date)+' '+arTime(m.meeting_date),view:'meetings',rid:m.id,key:'meet-'+m.id+m.meeting_date}));
   S.data.waiting_for.filter(w=>w.status==='waiting'&&w.due_date&&w.due_date<today).forEach(w=>
     out.push({id:'wait-'+w.id,cls:'ni-amber',ic:'⏳',title:w.title,sub:'انتظار متأخر · '+arShort(w.due_date),view:'waiting_for',rid:w.id,key:'wait-'+w.id+w.due_date}));
+  // المهام الدورية
+  S.data.recurring_tasks.filter(r=>r.active!==false&&r.next_due).forEach(r=>{
+    const dl=Math.round((new Date(r.next_due)-new Date(today))/864e5);
+    if(dl<0) out.push({id:'rec-'+r.id,cls:'ni-red',ic:'🔁',title:r.title,sub:'دورية متأخرة · '+arShort(r.next_due),view:'tasks',rid:r.id,key:'rec-'+r.id+r.next_due,recc:1});
+    else if(dl<=(r.remind_days||0)) out.push({id:'rec-'+r.id,cls:'ni-amber',ic:'🔁',title:r.title,sub:'دورية تقترب · '+arShort(r.next_due),view:'tasks',rid:r.id,key:'rec-'+r.id+r.next_due,recc:1});
+  });
+  // الأحداث
+  S.data.events.forEach(ev=>{
+    const dl=Math.round((new Date(ev.start_date)-new Date(today))/864e5);
+    if(dl>=0&&dl<=(ev.remind_days||0))
+      out.push({id:'ev-'+ev.id,cls:'ni-blue',ic:'📅',title:ev.title,sub:'حدث قادم · '+arShort(ev.start_date),view:'calendar',rid:ev.id,key:'ev-'+ev.id+ev.start_date,evt:1});
+  });
   const rank={'ni-red':0,'ni-amber':1,'ni-blue':2,'ni-green':3};
   out.sort((a,b)=>rank[a.cls]-rank[b.cls]);
   return out;
@@ -1395,7 +1571,10 @@ function toggleNotif(ev){ ev&&ev.stopPropagation();
 function openNotif(view,rid,key){
   S.notifSeen[key]=1; saveNotifSeen();
   document.getElementById('notif-panel').classList.add('hidden');
-  go(view); setTimeout(()=>openForm(view,rid),120);
+  const n=S.notifs.find(x=>x.key===key);
+  if(n&&n.recc){ S.view='tasks'; S.tasksMode='recurring'; route(); }
+  else if(n&&n.evt){ go('calendar'); setTimeout(()=>openForm('events',rid),120); }
+  else{ go(view); setTimeout(()=>openForm(view,rid),120); }
   refreshNotifications();
 }
 function clearAllNotifs(){ S.notifs.forEach(n=>S.notifSeen[n.key]=1); saveNotifSeen(); refreshNotifications(); }
@@ -1442,6 +1621,15 @@ function renderCalendar(c){
     add(t.due_date,{cls:over?'over':'task',label:t.title,view:'tasks',id:t.id});});
   S.data.meetings.filter(mm=>mm.meeting_date).forEach(mm=>
     add(isoDate(new Date(mm.meeting_date)),{cls:'meet',label:mm.title,view:'meetings',id:mm.id}));
+  // الأحداث (إجازات/مؤتمرات...) — تمتد عبر الأيام
+  S.data.events.forEach(ev=>{
+    let d=new Date(ev.start_date); const end=new Date(ev.end_date||ev.start_date); let guard=0;
+    while(d<=end&&guard<62){ add(isoDate(d),{cls:ev.kind==='vacation'?'vaca':'evnt',label:ev.title,view:'calendar',id:ev.id,evt:1}); d=new Date(d.getTime()+864e5); guard++; }
+  });
+  // المهام الدورية — استحقاقاتها ضمن الشهر
+  S.data.recurring_tasks.filter(r=>r.active!==false).forEach(r=>{
+    recOccursInMonth(r,y,m).forEach(iso=>add(iso,{cls:'recc',label:'🔁 '+r.title,view:'tasks',id:r.id,rec:1}));
+  });
 
   let cells='';
   for(let i=0;i<start;i++){ const d=prevDays-start+1+i;
@@ -1450,7 +1638,11 @@ function renderCalendar(c){
     const iso=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
     const evs=evByDay[iso]||[]; const isToday=iso===todayIso;
     cells+=`<div class="cal-cell ${isToday?'today':''}"><div class="dn">${d}</div>
-      ${evs.slice(0,3).map(e=>`<div class="cal-ev ${e.cls}" onclick="go('${e.view}');setTimeout(()=>openForm('${e.view}','${e.id}'),120)">${esc(e.label)}</div>`).join('')}
+      ${evs.slice(0,3).map(e=>{
+        const act=e.evt?`openForm('events','${e.id}')`
+          :e.rec?`S.view='tasks';S.tasksMode='recurring';route()`
+          :`go('${e.view}');setTimeout(()=>openForm('${e.view}','${e.id}'),120)`;
+        return `<div class="cal-ev ${e.cls}" onclick="${act}">${esc(e.label)}</div>`;}).join('')}
       ${evs.length>3?`<div class="cal-more">+${evs.length-3} أخرى</div>`:''}</div>`;
   }
   const total=start+days; const trail=(7-(total%7))%7;
@@ -1460,12 +1652,16 @@ function renderCalendar(c){
       <button class="cal-nav" onclick="calShift(-1)">›</button>
       <h3>${AR_MONTHS[m]} ${y}</h3>
       <button class="cal-nav" onclick="calShift(1)">‹</button>
-      <button class="cal-today" onclick="calToday()">اليوم</button></div>
+      <button class="cal-today" onclick="calToday()">اليوم</button>
+      <button class="btn btn-primary btn-sm" onclick="openForm('events')">＋ حدث</button></div>
     <div class="cal-grid">${dow.map(d=>`<div class="cal-dow">${d}</div>`).join('')}${cells}</div></div>
     <div style="display:flex;gap:16px;margin-top:14px;font-size:12px;color:var(--muted);flex-wrap:wrap">
       <span><span class="cal-ev task" style="display:inline-block;padding:2px 8px">مهمة</span></span>
       <span><span class="cal-ev meet" style="display:inline-block;padding:2px 8px">اجتماع</span></span>
       <span><span class="cal-ev over" style="display:inline-block;padding:2px 8px">متأخرة</span></span>
+      <span><span class="cal-ev evnt" style="display:inline-block;padding:2px 8px">حدث</span></span>
+      <span><span class="cal-ev vaca" style="display:inline-block;padding:2px 8px">إجازة</span></span>
+      <span><span class="cal-ev recc" style="display:inline-block;padding:2px 8px">🔁 دورية</span></span>
     </div>`;
 }
 function calShift(d){ let m=S.calMonth+d,y=S.calYear;
@@ -1591,7 +1787,7 @@ function renderReports(c){
 
   <div id="report-doc" class="report-doc">
     <div class="rep-head">
-      <div class="rep-brand"><div class="brand-dot" style="width:40px;height:40px;font-size:18px">M</div>
+      <div class="rep-brand"><span class="mlogo"><svg width="42" height="42" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mgr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2B9BF4"/><stop offset="1" stop-color="#0B3E9C"/></linearGradient><linearGradient id="mbr" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0B3E9C"/><stop offset="1" stop-color="#2B9BF4"/></linearGradient></defs><path d="M6 10 L20 10 L32 26 L44 10 L58 10 L58 54 L46 54 L46 26 L34 42 L30 42 L18 26 L18 54 L6 54 Z" fill="url(#mgr)"/><rect x="26" y="40" width="4.5" height="12" rx="1" fill="url(#mbr)"/><rect x="33" y="34" width="4.5" height="18" rx="1" fill="url(#mbr)"/><rect x="40" y="28" width="4.5" height="24" rx="1" fill="url(#mbr)"/><path d="M22 44 Q34 34 46 22 L43 21 L50 17 L49 25 L47 23 Q35 36 24 46 Z" fill="#5FB6FF"/></svg></span>
         <div><div class="rep-title">التقرير ال${cur[1].replace('ي','ي')}</div>
           <div class="rep-meta">Montera Life OS · ${cur[2]}</div></div></div>
       <div class="rep-date"><div>${arDate(new Date())}</div><div style="color:var(--faint);font-size:12px">${esc(S.user.email)}</div></div>
@@ -1644,6 +1840,552 @@ function renderReports(c){
 function repKpi(n,l,color){ return `<div class="rep-kpi"><div class="n" style="color:${color}">${n}</div><div class="l">${l}</div></div>`; }
 function repSection(title,count,inner){ return `<div class="rep-section"><div class="rep-sec-head">${title}
   <span class="rep-count">${count}</span></div>${inner}</div>`; }
+
+/* ===================================================================
+   PROFILE + ADAPTIVE GREETING + CLOCK + HIJRI
+=================================================================== */
+function userDisplayName(){
+  if(S.profile&&S.profile.display_name){
+    return ((S.profile.honorific&&S.profile.honorific!=='بدون')?S.profile.honorific+' ':'')+S.profile.display_name;
+  }
+  return 'بك';
+}
+function greetingInfo(d){
+  const h=d.getHours();
+  if(h>=4&&h<7)  return {text:'فجر مبارك',label:'وقت الفجر',emoji:'🌅',cls:'t-dawn'};
+  if(h>=7&&h<12) return {text:'صباح الخير',label:'فترة الصباح',emoji:'☀️',cls:'t-morning'};
+  if(h>=12&&h<17)return {text:'نهارك سعيد',label:'فترة الظهيرة',emoji:'🌤',cls:'t-noon'};
+  if(h>=17&&h<21)return {text:'مساء الخير',label:'فترة المساء',emoji:'🌇',cls:'t-evening'};
+  return {text:'ليلة هادئة',label:'فترة الليل',emoji:'🌙',cls:'t-night'};
+}
+function hijriDate(d){
+  try{ return new Intl.DateTimeFormat('ar-SA-u-ca-islamic-umalqura',{day:'numeric',month:'long',year:'numeric'}).format(d)+' هـ'; }
+  catch(e){ return ''; }
+}
+function liveTime(){ const d=new Date(); let h=d.getHours(),m=d.getMinutes();
+  const ap=h<12?'ص':'م'; h=h%12||12; return `${h}:${String(m).padStart(2,'0')} ${ap}`; }
+setInterval(()=>{ const el=document.getElementById('live-clock'); if(el) el.textContent=liveTime(); },15000);
+
+async function ensureProfile(){
+  if(S.profile&&S.profile.display_name) return;
+  const root=document.getElementById('modal-root');
+  root.innerHTML=`<div class="overlay"><div class="modal" style="max-width:440px">
+    <div class="modal-head"><h3>أهلاً بك في Montera Life OS 👋</h3></div>
+    <div class="modal-body">
+      <p style="color:var(--muted);font-size:13px;margin-bottom:16px">عرّفنا بنفسك لتُخصَّص تجربتك — يمكن تعديلها لاحقاً.</p>
+      <div class="field"><label>الاسم</label><input id="pf-name" placeholder="مثال: تامر"></div>
+      <div class="field"><label>اللقب</label><select id="pf-hon">
+        <option>د.</option><option>م.</option><option>أ.</option><option>بدون</option></select></div>
+    </div>
+    <div class="modal-foot"><button class="btn btn-primary" onclick="saveProfileFirst()">حفظ وبدء</button></div>
+  </div></div>`;
+  setTimeout(()=>document.getElementById('pf-name')?.focus(),60);
+}
+async function saveProfileFirst(){
+  const name=(document.getElementById('pf-name').value||'').trim();
+  if(!name){ toast('اكتب اسمك','err'); return; }
+  const hon=document.getElementById('pf-hon').value;
+  try{
+    await supa.from('profiles').upsert({user_id:S.user.id,display_name:name,honorific:hon});
+    S.profile={user_id:S.user.id,display_name:name,honorific:hon};
+    closeModal(); route(); toast('أهلاً '+((hon!=='بدون'?hon+' ':'')+name),'ok');
+  }catch(e){ toast('تعذّر الحفظ — تأكد من تشغيل migration_v2','err'); }
+}
+
+/* ===================================================================
+   RECURRING TASKS (المهام الدورية)
+=================================================================== */
+const REC_KINDS={monthly:'شهرياً — يوم محدد',interval:'كل عدد أيام',yearly:'سنوياً — تاريخ ثابت',weekly:'أسبوعياً — يوم محدد'};
+const WEEKDAYS=['الأحد','الإثنين','الثلاثاء','الأربعاء','الخميس','الجمعة','السبت'];
+
+function recNextFrom(r,fromIso){
+  const from=new Date(fromIso);
+  if(r.kind==='monthly'){
+    const dom=Math.min(r.day_of_month||1,28)===r.day_of_month?r.day_of_month:(r.day_of_month||1);
+    let d=new Date(from.getFullYear(),from.getMonth(),dom);
+    const clamp=(y,m,day)=>{const last=new Date(y,m+1,0).getDate();return new Date(y,m,Math.min(day,last));};
+    d=clamp(from.getFullYear(),from.getMonth(),r.day_of_month||1);
+    if(d<from) d=clamp(from.getFullYear(),from.getMonth()+1,r.day_of_month||1);
+    return isoDate(d);
+  }
+  if(r.kind==='interval'){
+    const n=Math.max(1,r.every_days||1);
+    let d=new Date(r.anchor_date||fromIso);
+    while(d<from) d=new Date(d.getTime()+n*864e5);
+    return isoDate(d);
+  }
+  if(r.kind==='yearly'){
+    let d=new Date(from.getFullYear(),(r.yr_month||1)-1,r.yr_day||1);
+    if(d<from) d=new Date(from.getFullYear()+1,(r.yr_month||1)-1,r.yr_day||1);
+    return isoDate(d);
+  }
+  if(r.kind==='weekly'){
+    let d=new Date(from);
+    while(d.getDay()!==(r.weekday??0)) d=new Date(d.getTime()+864e5);
+    return isoDate(d);
+  }
+  return fromIso;
+}
+function recOccursInMonth(r,y,m){
+  const out=[]; const first=new Date(y,m,1), last=new Date(y,m+1,0);
+  let cur=recNextFrom(r,isoDate(first));
+  let guard=0;
+  while(new Date(cur)<=last&&guard<40){ out.push(cur);
+    cur=recNextFrom(r,isoDate(new Date(new Date(cur).getTime()+864e5))); guard++; }
+  return out;
+}
+function recDescribe(r){
+  if(r.kind==='monthly') return `يوم ${r.day_of_month} من كل شهر`;
+  if(r.kind==='interval') return `كل ${r.every_days} يوم`;
+  if(r.kind==='yearly') return `${r.yr_day} ${AR_MONTHS[(r.yr_month||1)-1]} من كل عام`;
+  if(r.kind==='weekly') return `كل ${WEEKDAYS[r.weekday??0]}`;
+  return '';
+}
+function openRecForm(id){
+  const rec=id?S.data.recurring_tasks.find(x=>x.id===id):null;
+  const k=rec?rec.kind:'monthly';
+  const root=document.getElementById('modal-root');
+  root.innerHTML=`<div class="overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal"><div class="modal-head"><h3>${id?'تعديل':'إضافة'} مهمة دورية</h3>
+      <button class="x" onclick="closeModal()">×</button></div>
+    <div class="modal-body"><div class="form-grid">
+      <div class="field full"><label>العنوان *</label><input id="rc-title" value="${rec?esc(rec.title):''}" placeholder="مثال: تقديم الإقرار الضريبي"></div>
+      <div class="field"><label>المجال</label><select id="rc-area"><option value="">— بدون —</option>
+        ${S.data.areas.map(a=>`<option value="${a.id}" ${rec&&rec.area_id===a.id?'selected':''}>${esc(a.name_ar)}</option>`).join('')}</select></div>
+      <div class="field"><label>نمط التكرار</label><select id="rc-kind" onchange="recKindFields(this.value)">
+        ${Object.entries(REC_KINDS).map(([kk,l])=>`<option value="${kk}" ${k===kk?'selected':''}>${l}</option>`).join('')}</select></div>
+      <div class="field full" id="rc-dynamic"></div>
+      <div class="field"><label>تذكير قبلها بـ (أيام)</label><input id="rc-remind" type="number" min="0" value="${rec?rec.remind_days:3}"></div>
+      <div class="field"><label>ملاحظات</label><input id="rc-notes" value="${rec?esc(rec.notes||''):''}"></div>
+    </div></div>
+    <div class="modal-foot">
+      ${id?`<button class="btn btn-ghost del" onclick="delRec('${id}')">حذف</button>`:''}
+      <button class="btn btn-ghost" onclick="closeModal()">إلغاء</button>
+      <button class="btn btn-primary" onclick="saveRec('${id||''}')">حفظ</button>
+    </div></div></div>`;
+  recKindFields(k,rec);
+}
+function recKindFields(k,rec){
+  const d=document.getElementById('rc-dynamic');
+  if(k==='monthly') d.innerHTML=`<label>يوم من الشهر (1-31)</label><input id="rc-p1" type="number" min="1" max="31" value="${rec?.day_of_month||25}">`;
+  else if(k==='interval') d.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div><label>كل كم يوم؟</label><input id="rc-p1" type="number" min="1" value="${rec?.every_days||28}"></div>
+      <div><label>بدءاً من تاريخ</label><input id="rc-p2" type="date" value="${rec?.anchor_date||isoDate(new Date())}"></div></div>`;
+  else if(k==='yearly') d.innerHTML=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+      <div><label>الشهر</label><select id="rc-p1">${AR_MONTHS.map((m,i)=>`<option value="${i+1}" ${(rec?.yr_month||4)===i+1?'selected':''}>${m}</option>`).join('')}</select></div>
+      <div><label>اليوم</label><input id="rc-p2" type="number" min="1" max="31" value="${rec?.yr_day||30}"></div></div>`;
+  else d.innerHTML=`<label>يوم الأسبوع</label><select id="rc-p1">${WEEKDAYS.map((w,i)=>`<option value="${i}" ${(rec?.weekday??0)===i?'selected':''}>${w}</option>`).join('')}</select>`;
+}
+async function saveRec(id){
+  const title=(document.getElementById('rc-title').value||'').trim();
+  if(!title){ toast('أدخل العنوان','err'); return; }
+  const kind=document.getElementById('rc-kind').value;
+  const obj={title,kind,area_id:document.getElementById('rc-area').value||null,
+    remind_days:+document.getElementById('rc-remind').value||0,
+    notes:document.getElementById('rc-notes').value||null,active:true,
+    day_of_month:null,every_days:null,anchor_date:null,yr_month:null,yr_day:null,weekday:null};
+  if(kind==='monthly') obj.day_of_month=+document.getElementById('rc-p1').value||1;
+  if(kind==='interval'){ obj.every_days=+document.getElementById('rc-p1').value||1; obj.anchor_date=document.getElementById('rc-p2').value; }
+  if(kind==='yearly'){ obj.yr_month=+document.getElementById('rc-p1').value||1; obj.yr_day=+document.getElementById('rc-p2').value||1; }
+  if(kind==='weekly') obj.weekday=+document.getElementById('rc-p1').value||0;
+  obj.next_due=recNextFrom(obj,isoDate(new Date()));
+  try{
+    if(id) await supa.from('recurring_tasks').update(obj).eq('id',id);
+    else await supa.from('recurring_tasks').insert(obj);
+    closeModal(); await loadAll(); route(); toast('تم الحفظ','ok');
+  }catch(e){ toast('تعذّر الحفظ — شغّل migration_v2 أولاً','err'); }
+}
+async function delRec(id){ if(!confirm('حذف هذه المهمة الدورية؟'))return;
+  await supa.from('recurring_tasks').delete().eq('id',id); closeModal(); await loadAll(); route(); toast('حُذفت','ok'); }
+async function recMarkDone(id){
+  const r=S.data.recurring_tasks.find(x=>x.id===id); if(!r) return;
+  const done=r.next_due;
+  const next=recNextFrom(r,isoDate(new Date(new Date(done).getTime()+864e5)));
+  await supa.from('recurring_tasks').update({last_done:done,next_due:next}).eq('id',id);
+  await loadAll(); route(); toast('أُنجزت — الاستحقاق التالي: '+arShort(next),'ok');
+}
+function renderRecurring(el){
+  const list=S.data.recurring_tasks.filter(r=>r.active!==false)
+    .map(r=>({...r,next:r.next_due||recNextFrom(r,isoDate(new Date()))}))
+    .sort((a,b)=>a.next.localeCompare(b.next));
+  const today=isoDate(new Date());
+  el.innerHTML=`
+  <div class="toolbar"><div style="color:var(--muted);font-size:13px">التزاماتك المتكررة: فواتير، تقارير التأمينات، الإقرار الضريبي، مراجعات دورية...</div>
+    <button class="btn btn-primary btn-sm" style="margin-inline-start:auto" onclick="openRecForm()">＋ مهمة دورية</button></div>
+  ${list.length?`<div class="tbl"><table><thead><tr>
+    <th></th><th>المهمة</th><th>المجال</th><th>نمط التكرار</th><th>الاستحقاق القادم</th><th>آخر إنجاز</th><th>تذكير</th><th style="width:70px"></th></tr></thead><tbody>
+    ${list.map(r=>{const a=area(r.area_id);const dl=Math.round((new Date(r.next)-new Date(today))/864e5);
+      const urgCls=dl<0?'c-red':dl<=r.remind_days?'c-amber':'c-green';
+      return `<tr>
+        <td style="width:36px"><div class="check" onclick="recMarkDone('${r.id}')" title="تعليم منجزاً">✓</div></td>
+        <td class="t-title" onclick="openRecForm('${r.id}')">${esc(r.title)}</td>
+        <td>${a?`<span class="chip c-gray"><span class="dt" style="background:${a.color}"></span>${esc(a.name_ar)}</span>`:'—'}</td>
+        <td class="rec-kind">🔁 ${recDescribe(r)}</td>
+        <td><span class="chip ${urgCls}">${dl<0?'متأخرة '+Math.abs(dl)+' يوم':dl===0?'اليوم':arShort(r.next)+' · بعد '+dl+' يوم'}</span></td>
+        <td style="color:var(--faint);font-size:12px">${r.last_done?arShort(r.last_done):'—'}</td>
+        <td style="color:var(--faint);font-size:12px">قبل ${r.remind_days} أيام</td>
+        <td><div class="row-actions">
+          <button class="icon-btn" onclick="openRecForm('${r.id}')">✎</button></div></td></tr>`;}).join('')}
+  </tbody></table></div>`:cardEmptyRec()}`;
+}
+function cardEmptyRec(){ return `<div class="card"><div class="empty"><span class="em">🔁</span>لا مهام دورية بعد. أضف التزاماتك المتكررة وسيتولّى النظام تذكيرك.<br>
+  <button class="btn btn-primary btn-sm" style="margin-top:12px" onclick="openRecForm()">＋ إضافة</button></div></div>`; }
+
+/* ===================================================================
+   HABITS (يومياتي)
+=================================================================== */
+function habitLog(hid,dateIso){ return S.data.habit_logs.find(l=>l.habit_id===hid&&l.log_date===dateIso&&l.done); }
+async function toggleHabit(hid,dateIso){
+  const ex=S.data.habit_logs.find(l=>l.habit_id===hid&&l.log_date===dateIso);
+  try{
+    if(ex) await supa.from('habit_logs').delete().eq('id',ex.id);
+    else await supa.from('habit_logs').insert({habit_id:hid,log_date:dateIso,done:true});
+    await loadAll(); route();
+  }catch(e){ toast('تعذّر الحفظ — شغّل migration_v2','err'); }
+}
+async function saveDayNote(dateIso,val){
+  const ex=S.data.daily_reviews.find(d=>d.review_date===dateIso);
+  try{
+    if(ex) await supa.from('daily_reviews').update({note:val}).eq('id',ex.id);
+    else await supa.from('daily_reviews').insert({review_date:dateIso,note:val});
+    const e2=S.data.daily_reviews.find(d=>d.review_date===dateIso);
+    if(e2)e2.note=val; else S.data.daily_reviews.push({review_date:dateIso,note:val});
+    toast('حُفظت مراجعة اليوم','ok');
+  }catch(e){ toast('تعذّر الحفظ','err'); }
+}
+function openHabitForm(id){
+  const h=id?S.data.habits.find(x=>x.id===id):null;
+  const root=document.getElementById('modal-root');
+  root.innerHTML=`<div class="overlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal" style="max-width:420px"><div class="modal-head"><h3>${id?'تعديل':'إضافة'} نشاط يومي</h3>
+      <button class="x" onclick="closeModal()">×</button></div>
+    <div class="modal-body">
+      <div class="field"><label>اسم النشاط *</label><input id="hb-name" value="${h?esc(h.name):''}" placeholder="مثال: صلاة الفجر"></div>
+      <div class="field"><label>أيقونة (إيموجي)</label><input id="hb-icon" value="${h?esc(h.icon||'✓'):'🕌'}"></div>
+    </div>
+    <div class="modal-foot">
+      ${id?`<button class="btn btn-ghost del" onclick="delHabit('${id}')">حذف</button>`:''}
+      <button class="btn btn-ghost" onclick="closeModal()">إلغاء</button>
+      <button class="btn btn-primary" onclick="saveHabit('${id||''}')">حفظ</button>
+    </div></div></div>`;
+  setTimeout(()=>document.getElementById('hb-name')?.focus(),50);
+}
+async function saveHabit(id){
+  const name=(document.getElementById('hb-name').value||'').trim();
+  if(!name){ toast('اكتب اسم النشاط','err'); return; }
+  const icon=document.getElementById('hb-icon').value||'✓';
+  try{
+    if(id) await supa.from('habits').update({name,icon}).eq('id',id);
+    else await supa.from('habits').insert({name,icon,sort:S.data.habits.length+1});
+    closeModal(); await loadAll(); route(); toast('تم الحفظ','ok');
+  }catch(e){ toast('تعذّر — شغّل migration_v2','err'); }
+}
+async function delHabit(id){ if(!confirm('حذف النشاط وكل سجلّه؟'))return;
+  await supa.from('habits').delete().eq('id',id); closeModal(); await loadAll(); route(); }
+async function seedDefaultHabits(){
+  const defs=[['صلاة الفجر','🕌'],['صلاة الظهر','🕌'],['صلاة العصر','🕌'],['صلاة المغرب','🕌'],['صلاة العشاء','🕌'],
+    ['قراءة الورد من القرآن','📖'],['رياضة المشي ساعة','🚶'],['الاتصال بالوالدين','📞'],['متابعة واجبات الأطفال','👨‍👩‍👧']];
+  try{ await supa.from('habits').insert(defs.map((d,i)=>({name:d[0],icon:d[1],sort:i+1})));
+    await loadAll(); route(); toast('أُضيفت الأنشطة المقترحة — عدّلها كما تشاء','ok');
+  }catch(e){ toast('تعذّر — شغّل migration_v2','err'); }
+}
+function renderHabits(c){
+  const mode=S.habitsMode;
+  c.innerHTML=`<div class="subseg">
+      <button class="${mode==='today'?'on':''}" onclick="S.habitsMode='today';route()">اليوم</button>
+      <button class="${mode==='matrix'?'on':''}" onclick="S.habitsMode='matrix';route()">المصفوفة والإحصاءات</button>
+    </div><div id="habits-body"></div>`;
+  const el=document.getElementById('habits-body');
+  if(mode==='matrix') return renderHabitMatrix(el);
+  // ---- TODAY ----
+  const today=isoDate(new Date());
+  const habits=S.data.habits.filter(h=>h.active!==false);
+  const doneCount=habits.filter(h=>habitLog(h.id,today)).length;
+  const pct=habits.length?Math.round(doneCount/habits.length*100):0;
+  const note=(S.data.daily_reviews.find(d=>d.review_date===today)||{}).note||'';
+  const R=34,C=2*Math.PI*R;
+  el.innerHTML=`
+  <div class="grid grid-2">
+    <div class="card"><div class="card-head"><h3>أنشطة اليوم — ${arDate(new Date())}</h3>
+      <button class="more" onclick="openHabitForm()">＋ نشاط</button></div>
+      <div class="card-body pad">
+        ${habits.length?habits.map(h=>{const on=!!habitLog(h.id,today);return `
+          <div class="habit-row ${on?'done':''}">
+            <div class="hcheck ${on?'on':''}" onclick="toggleHabit('${h.id}','${today}')">${on?'✓':''}</div>
+            <span class="habit-ic">${h.icon||'✓'}</span>
+            <span class="hn">${esc(h.name)}</span>
+            <button class="icon-btn" onclick="openHabitForm('${h.id}')">✎</button>
+          </div>`;}).join('')
+        :`<div class="empty"><span class="em">☀</span>لا أنشطة بعد.<br>
+           <button class="btn btn-primary btn-sm" style="margin-top:10px" onclick="seedDefaultHabits()">إضافة الأنشطة المقترحة</button>
+           <button class="btn btn-ghost btn-sm" style="margin-top:10px" onclick="openHabitForm()">＋ نشاط مخصص</button></div>`}
+      </div></div>
+    <div>
+      <div class="card" style="margin-bottom:16px"><div class="card-body pad" style="display:flex;align-items:center;gap:18px">
+        <div class="ring-day"><svg width="88" height="88"><circle cx="44" cy="44" r="${R}" fill="none" stroke="var(--surface-2)" stroke-width="9"/>
+          <circle cx="44" cy="44" r="${R}" fill="none" stroke="var(--green)" stroke-width="9" stroke-linecap="round"
+            stroke-dasharray="${C}" stroke-dashoffset="${C*(1-pct/100)}"/></svg>
+          <div class="pc">${pct}%</div></div>
+        <div><b style="font-size:16px;font-weight:700">${doneCount} من ${habits.length}</b>
+          <div style="color:var(--muted);font-size:12.5px;margin-top:3px">${pct===100?'يوم مكتمل — أحسنت! 🎉':pct>=50?'تقدّم جيد، أكمل البقية':'ابدأ يومك خطوة بخطوة'}</div></div>
+      </div></div>
+      <div class="card"><div class="card-head"><h3>مراجعة اليوم</h3></div>
+        <div class="card-body pad">
+          <textarea class="day-note" id="day-note" placeholder="كيف كان يومك؟ ما الذي أنجزته وما الذي تريد تحسينه غداً؟">${esc(note)}</textarea>
+          <button class="btn btn-primary btn-sm" style="margin-top:10px" onclick="saveDayNote('${today}',document.getElementById('day-note').value)">حفظ المراجعة</button>
+        </div></div>
+    </div>
+  </div>`;
+}
+function renderHabitMatrix(el){
+  const habits=S.data.habits.filter(h=>h.active!==false);
+  if(!habits.length){ el.innerHTML=`<div class="card"><div class="empty">أضف أنشطة أولاً من تبويب «اليوم».</div></div>`; return; }
+  const y=S.calYear,m=S.calMonth;
+  const days=new Date(y,m+1,0).getDate();
+  const todayIso=isoDate(new Date());
+  // stats helpers
+  const rate=(h,fromIso,toIso)=>{
+    let tot=0,don=0; let d=new Date(fromIso);
+    const end=new Date(toIso);
+    while(d<=end){ const iso=isoDate(d); if(iso<=todayIso){ tot++; if(habitLog(h.id,iso))don++; } d=new Date(d.getTime()+864e5); }
+    return tot?Math.round(don/tot*100):0;
+  };
+  const weekAgo=isoDate(new Date(Date.now()-6*864e5));
+  const monthStart=`${y}-${String(m+1).padStart(2,'0')}-01`;
+  const yearStart=`${new Date().getFullYear()}-01-01`;
+  let rows='';
+  for(let d=1;d<=days;d++){
+    const iso=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const dt=new Date(iso);
+    rows+=`<tr><td class="dcol ${iso===todayIso?'today':''}">${WEEKDAYS[dt.getDay()].slice(0,3)} ${d}</td>
+      ${habits.map(h=>{const on=!!habitLog(h.id,iso);
+        const future=iso>todayIso;
+        const cls=on?'done':(future?'future':(iso<todayIso?'miss':''));
+        return `<td><span class="mcell ${cls}" ${future?'':`onclick="toggleHabit('${h.id}','${iso}')"`}>${on?'✓':''}</span></td>`;}).join('')}
+    </tr>`;
+  }
+  el.innerHTML=`
+  <div class="toolbar">
+    <button class="cal-nav" onclick="calShift(-1)">›</button>
+    <b style="min-width:130px;text-align:center">${AR_MONTHS[m]} ${y}</b>
+    <button class="cal-nav" onclick="calShift(1)">‹</button>
+    <span style="margin-inline-start:auto;font-size:12px;color:var(--muted)">اضغط أي خلية لتعليم/إلغاء النشاط في ذلك اليوم</span>
+  </div>
+  <div class="matrix-wrap"><table class="mx">
+    <thead><tr><th class="hcol">اليوم</th>${habits.map(h=>`<th>${h.icon||''}<br>${esc(h.name).split(' ').slice(0,2).join(' ')}</th>`).join('')}</tr></thead>
+    <tbody>${rows}</tbody></table></div>
+  <div class="grid grid-2" style="margin-top:16px">
+    <div class="card"><div class="card-head"><h3>نسب الالتزام — آخر ٧ أيام</h3></div><div class="card-body pad">
+      ${habits.map(h=>{const p=rate(h,weekAgo,todayIso);return `<div class="hstat">
+        <span style="width:150px;font-size:12.5px">${h.icon||''} ${esc(h.name)}</span>
+        <div class="pbar2"><i style="width:${p}%"></i></div><b style="width:40px;text-align:left;font-size:12px">${p}%</b></div>`;}).join('')}
+    </div></div>
+    <div class="card"><div class="card-head"><h3>الالتزام الشهري والسنوي</h3></div><div class="card-body pad">
+      ${habits.map(h=>{const pm=rate(h,monthStart,todayIso),py=rate(h,yearStart,todayIso);return `<div class="hstat">
+        <span style="width:150px;font-size:12.5px">${h.icon||''} ${esc(h.name)}</span>
+        <span class="chip c-blue">الشهر ${pm}%</span><span class="chip c-gray">السنة ${py}%</span></div>`;}).join('')}
+    </div></div>
+  </div>`;
+}
+
+/* ===================================================================
+   NOTES PAGES EDITOR (كتابة + رسم حر)
+=================================================================== */
+let PG={noteId:null,pages:[],idx:0,mode:'write',color:'#153A8A',size:3,undo:[],dirty:false};
+function openPagesEditor(noteId){
+  const n=S.data.notes.find(x=>x.id===noteId); if(!n) return;
+  closeModal();
+  PG={noteId,pages:Array.isArray(n.pages)?JSON.parse(JSON.stringify(n.pages)):[],idx:0,mode:'write',color:'#153A8A',size:3,undo:[],dirty:false};
+  if(!PG.pages.length) PG.pages.push({text:'',ink:null});
+  const root=document.getElementById('modal-root');
+  root.innerHTML=`<div class="overlay">
+    <div class="modal pages-modal"><div class="modal-head"><h3>📝 ${esc(n.title||'صفحات الملاحظة')}</h3>
+      <button class="x" onclick="closePages()">×</button></div>
+    <div class="modal-body">
+      <div class="paper-tools">
+        <button class="ptool ${PG.mode==='write'?'on':''}" id="pt-write" onclick="pgMode('write')" title="كتابة">⌨</button>
+        <button class="ptool ${PG.mode==='draw'?'on':''}" id="pt-draw" onclick="pgMode('draw')" title="قلم">✏️</button>
+        <button class="ptool" id="pt-erase" onclick="pgMode('erase')" title="ممحاة">◻</button>
+        <span style="width:1px;height:24px;background:var(--border-2)"></span>
+        ${['#153A8A','#C4362F','#1F9D53','#111111'].map(cc=>`<span class="pcolor ${PG.color===cc?'on':''}" data-c="${cc}" style="background:${cc}" onclick="pgColor('${cc}')"></span>`).join('')}
+        <span style="width:1px;height:24px;background:var(--border-2)"></span>
+        <button class="ptool" onclick="pgSize(2)" title="رفيع">・</button>
+        <button class="ptool" onclick="pgSize(4)" title="متوسط">●</button>
+        <button class="ptool" onclick="pgSize(8)" title="سميك">⬤</button>
+        <span style="margin-inline-start:auto"></span>
+        <button class="ptool" onclick="pgUndo()" title="تراجع">↩</button>
+        <button class="ptool" onclick="pgClearInk()" title="مسح الرسم">🗑</button>
+      </div>
+      <div class="paper-wrap">
+        <div class="paper-lines"></div>
+        <textarea class="paper-text" id="pg-text" placeholder="اكتب مسودتك هنا..." oninput="PG.dirty=true"></textarea>
+        <canvas class="paper-canvas" id="pg-canvas"></canvas>
+      </div>
+      <div class="page-nav">
+        <button class="btn btn-ghost btn-sm" onclick="pgNav(1)">الصفحة التالية ›</button>
+        <span class="pn" id="pg-num"></span>
+        <button class="btn btn-ghost btn-sm" onclick="pgNav(-1)">‹ الصفحة السابقة</button>
+        <button class="btn btn-ghost btn-sm" onclick="pgAddPage()">＋ صفحة جديدة</button>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn btn-ghost" onclick="closePages()">إغلاق</button>
+      <button class="btn btn-primary" onclick="savePages()">💾 حفظ الصفحات</button>
+    </div></div></div>`;
+  setTimeout(initPageCanvas,60);
+}
+function initPageCanvas(){
+  const cv=document.getElementById('pg-canvas'); if(!cv) return;
+  const wrap=cv.parentElement;
+  cv.width=wrap.clientWidth; cv.height=wrap.clientHeight;
+  loadPageIntoUI();
+  const ctx=cv.getContext('2d');
+  let drawing=false,last=null;
+  const pos=e=>{const r=cv.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top};};
+  cv.addEventListener('pointerdown',e=>{ if(PG.mode==='write')return;
+    drawing=true; last=pos(e); PG.undo.push(cv.toDataURL()); if(PG.undo.length>15)PG.undo.shift();
+    cv.setPointerCapture(e.pointerId); });
+  cv.addEventListener('pointermove',e=>{ if(!drawing)return;
+    const p=pos(e); ctx.lineCap='round'; ctx.lineJoin='round';
+    if(PG.mode==='erase'){ ctx.globalCompositeOperation='destination-out'; ctx.lineWidth=22; }
+    else{ ctx.globalCompositeOperation='source-over'; ctx.strokeStyle=PG.color; ctx.lineWidth=PG.size; }
+    ctx.beginPath(); ctx.moveTo(last.x,last.y); ctx.lineTo(p.x,p.y); ctx.stroke();
+    last=p; PG.dirty=true; });
+  const stop=()=>{ drawing=false; };
+  cv.addEventListener('pointerup',stop); cv.addEventListener('pointercancel',stop);
+  pgMode(PG.mode);
+}
+function loadPageIntoUI(){
+  const pg=PG.pages[PG.idx];
+  document.getElementById('pg-text').value=pg.text||'';
+  const cv=document.getElementById('pg-canvas'); const ctx=cv.getContext('2d');
+  ctx.clearRect(0,0,cv.width,cv.height);
+  if(pg.ink){ const img=new Image(); img.onload=()=>ctx.drawImage(img,0,0); img.src=pg.ink; }
+  document.getElementById('pg-num').textContent=`صفحة ${PG.idx+1} من ${PG.pages.length}`;
+  PG.undo=[];
+}
+function snapshotPage(){
+  const pg=PG.pages[PG.idx];
+  pg.text=document.getElementById('pg-text').value;
+  const cv=document.getElementById('pg-canvas');
+  pg.ink=cv.toDataURL('image/png');
+}
+function pgNav(dir){ snapshotPage();
+  PG.idx=Math.max(0,Math.min(PG.pages.length-1,PG.idx+dir)); loadPageIntoUI(); }
+function pgAddPage(){ snapshotPage(); PG.pages.push({text:'',ink:null}); PG.idx=PG.pages.length-1; loadPageIntoUI(); }
+function pgMode(m){ PG.mode=m;
+  document.getElementById('pg-canvas').classList.toggle('off',m==='write');
+  document.getElementById('pt-write').classList.toggle('on',m==='write');
+  document.getElementById('pt-draw').classList.toggle('on',m==='draw');
+  document.getElementById('pt-erase').classList.toggle('on',m==='erase'); }
+function pgColor(c){ PG.color=c; PG.mode='draw'; pgMode('draw');
+  document.querySelectorAll('.pcolor').forEach(el=>el.classList.toggle('on',el.dataset.c===c)); }
+function pgSize(s){ PG.size=s; if(PG.mode==='write')pgMode('draw'); }
+function pgUndo(){ if(!PG.undo.length)return;
+  const cv=document.getElementById('pg-canvas'); const ctx=cv.getContext('2d');
+  const img=new Image(); const data=PG.undo.pop();
+  img.onload=()=>{ ctx.clearRect(0,0,cv.width,cv.height); ctx.drawImage(img,0,0); }; img.src=data; }
+function pgClearInk(){ if(!confirm('مسح كل الرسم في هذه الصفحة؟'))return;
+  const cv=document.getElementById('pg-canvas'); cv.getContext('2d').clearRect(0,0,cv.width,cv.height); PG.dirty=true; }
+async function savePages(){
+  snapshotPage();
+  try{ await supa.from('notes').update({pages:PG.pages}).eq('id',PG.noteId);
+    const n=S.data.notes.find(x=>x.id===PG.noteId); if(n)n.pages=PG.pages;
+    PG.dirty=false; toast('حُفظت الصفحات','ok');
+  }catch(e){ toast('تعذّر — شغّل migration_v2','err'); }
+}
+function closePages(){ if(PG.dirty&&!confirm('توجد تغييرات غير محفوظة. إغلاق دون حفظ؟'))return; closeModal(); }
+
+/* ===================================================================
+   PROJECT & AREA DETAIL SCREENS
+=================================================================== */
+function openProject(id){ S.selProject=id; S.view='project_detail'; route(); window.scrollTo(0,0); }
+function openArea(id){ S.selArea=id; S.view='area_detail'; route(); window.scrollTo(0,0); }
+function renderProjectDetail(c){
+  const p=S.data.projects.find(x=>x.id===S.selProject);
+  if(!p){ go('projects'); return; }
+  const a=area(p.area_id);
+  const tasks=S.data.tasks.filter(t=>t.project_id===p.id)
+    .sort((x,y)=>(y.created_at||'').localeCompare(x.created_at||''));
+  const done=tasks.filter(t=>t.status==='done').length;
+  c.innerHTML=`
+  <span class="back-link" onclick="go('projects')">→ كل المشاريع</span>
+  <div class="det-head">
+    <div style="display:flex;align-items:flex-start;gap:12px;flex-wrap:wrap">
+      <div style="flex:1;min-width:220px">
+        <h2>${esc(p.name)}</h2>
+        <div style="color:var(--muted);font-size:12.5px;margin-top:3px">
+          ${a?`<span style="color:${a.color}">●</span> ${esc(a.name_ar)} · `:''}${chip(PSTATUS[p.status])}
+          ${p.end_date?` · ينتهي ${arShort(p.end_date)}`:''}</div>
+        ${p.description?`<div style="color:var(--muted);font-size:13px;margin-top:8px;line-height:1.7">${esc(p.description)}</div>`:''}
+      </div>
+      <button class="btn btn-ghost btn-sm" onclick="openForm('projects','${p.id}')">✎ تعديل المشروع</button>
+    </div>
+    <div class="det-stats">
+      <div class="det-stat"><div class="v tnum">${p.progress||0}%</div><div class="l">نسبة الإنجاز</div></div>
+      <div class="det-stat"><div class="v tnum">${tasks.length}</div><div class="l">إجمالي المهام</div></div>
+      <div class="det-stat"><div class="v tnum" style="color:var(--green)">${done}</div><div class="l">مكتملة</div></div>
+      <div class="det-stat"><div class="v tnum" style="color:var(--amber)">${tasks.length-done}</div><div class="l">مفتوحة</div></div>
+    </div>
+    <div class="progress" style="margin-top:14px;height:9px"><i style="width:${p.progress||0}%;background:${a?a.color:'var(--accent)'}"></i></div>
+  </div>
+  <div class="card"><div class="card-head"><h3>مهام المشروع</h3>
+    <button class="more" onclick="openForm('tasks',null,{project_id:'${p.id}',area_id:'${p.area_id||''}'})">＋ مهمة في هذا المشروع</button></div>
+    ${tasks.length?`<div class="tbl" style="border:none;box-shadow:none"><table><thead><tr>
+      <th></th><th>المهمة</th><th>وقت البداية</th><th>وقت النهاية</th><th>الاستحقاق</th><th>الحالة</th><th>الإنجاز</th></tr></thead><tbody>
+      ${tasks.map(t=>{const dn=t.status==='done';
+        return `<tr>
+        <td style="width:34px"><div class="check ${dn?'done':''}" onclick="toggleTask('${t.id}',event)">${dn?'✓':''}</div></td>
+        <td class="t-title" onclick="openForm('tasks','${t.id}')" style="${dn?'color:var(--faint);text-decoration:line-through':''}">${esc(t.title)}</td>
+        <td style="color:var(--muted);font-size:12px">${t.started_at?arShort(t.started_at)+' '+arTime(t.started_at):'—'}</td>
+        <td style="color:var(--muted);font-size:12px">${t.completed_at?arShort(t.completed_at)+' '+arTime(t.completed_at):'—'}</td>
+        <td style="color:var(--muted);font-size:12px">${t.due_date?arShort(t.due_date):'—'}</td>
+        <td>${chip(TSTATUS[t.status])}</td>
+        <td style="min-width:110px"><div style="display:flex;align-items:center;gap:8px">
+          <div class="progress" style="flex:1"><i style="width:${t.progress||0}%"></i></div>
+          <span style="font-size:11px;color:var(--muted)" class="tnum">${t.progress||0}%</span></div></td>
+        </tr>`;}).join('')}</tbody></table></div>`
+    :`<div class="empty">لا مهام في هذا المشروع بعد.</div>`}
+  </div>`;
+}
+function renderAreaDetail(c){
+  const a=S.data.areas.find(x=>x.id===S.selArea);
+  if(!a){ go('areas'); return; }
+  const projects=S.data.projects.filter(p=>p.area_id===a.id);
+  const tasks=S.data.tasks.filter(t=>t.area_id===a.id);
+  const openT=tasks.filter(t=>t.status!=='done').length;
+  const avg=projects.length?Math.round(projects.reduce((s,p)=>s+(p.progress||0),0)/projects.length):0;
+  c.innerHTML=`
+  <span class="back-link" onclick="go('areas')">→ كل المجالات</span>
+  <div class="det-head">
+    <div style="display:flex;align-items:center;gap:14px">
+      <div style="width:52px;height:52px;border-radius:13px;background:${a.color}1c;display:grid;place-items:center;font-size:25px">${a.icon||'📁'}</div>
+      <div style="flex:1"><h2>${esc(a.name_ar)}</h2>
+        <div style="color:var(--faint);font-size:12px">${esc(a.name_en||'')}</div></div>
+      <button class="btn btn-ghost btn-sm" onclick="openForm('areas','${a.id}')">✎ تعديل</button>
+    </div>
+    <div class="det-stats">
+      <div class="det-stat"><div class="v tnum">${projects.length}</div><div class="l">المشاريع</div></div>
+      <div class="det-stat"><div class="v tnum">${avg}%</div><div class="l">متوسط الإنجاز</div></div>
+      <div class="det-stat"><div class="v tnum">${tasks.length}</div><div class="l">إجمالي المهام</div></div>
+      <div class="det-stat"><div class="v tnum" style="color:var(--amber)">${openT}</div><div class="l">مهام مفتوحة</div></div>
+    </div>
+  </div>
+  <div class="card"><div class="card-head"><h3>مشاريع المجال ونسب إنجازها</h3>
+    <button class="more" onclick="openForm('projects',null,{area_id:'${a.id}'})">＋ مشروع في هذا المجال</button></div>
+    <div class="card-body pad">
+    ${projects.length?projects.map(p=>{const pt=S.data.tasks.filter(t=>t.project_id===p.id);
+      return `<div style="margin-bottom:16px;cursor:pointer" onclick="openProject('${p.id}')">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+        <b style="font-weight:600;flex:1">${esc(p.name)}</b>
+        ${chip(PSTATUS[p.status])}
+        <span style="font-size:12px;color:var(--muted)">${pt.length} مهمة</span>
+        <b style="font-size:13px" class="tnum">${p.progress||0}%</b></div>
+      <div class="progress"><i style="width:${p.progress||0}%;background:${a.color}"></i></div>
+    </div>`;}).join('')
+    :`<div class="empty">لا مشاريع في هذا المجال بعد.</div>`}
+  </div></div>`;
+}
 
 /* ===================================================================
    SHARED UI HELPERS
