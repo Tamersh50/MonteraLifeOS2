@@ -842,7 +842,11 @@ async function startApp(){
 async function loadAll(){
   const t=['areas','projects','meetings','tasks','waiting_for','notes','decisions',
            'recurring_tasks','events','habits','habit_logs','daily_reviews'];
-  const res=await Promise.all(t.map(x=>supa.from(x).select('*').order('created_at',{ascending:false}).then(r=>r,()=>({data:[]}))));
+  const ORDER={habit_logs:'log_date',daily_reviews:'review_date'}; // جداول بلا created_at
+  const res=await Promise.all(t.map(x=>{
+    const col=ORDER[x]||'created_at';
+    return supa.from(x).select('*').order(col,{ascending:false}).then(r=>r,()=>({data:[]}));
+  }));
   t.forEach((x,i)=>{ S.data[x]=res[i].data||[]; });
   S.data.areas.sort((a,b)=>(a.sort||0)-(b.sort||0));
   S.data.habits.sort((a,b)=>(a.sort||0)-(b.sort||0));
